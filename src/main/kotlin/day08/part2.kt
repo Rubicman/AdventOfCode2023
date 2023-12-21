@@ -1,5 +1,6 @@
 package day08
 
+import lcm
 import lines
 
 fun main() {
@@ -37,10 +38,6 @@ fun main() {
       }
       count
     }
-    .reduce(::lca)
+    .reduce(::lcm)
     .let(::println)
 }
-
-fun gcd(a: Long, b: Long): Long = if (b == 0L) a else gcd(b, a % b)
-
-fun lca(a: Long, b: Long) = a * b / gcd(a, b)
